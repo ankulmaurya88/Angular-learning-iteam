@@ -1,0 +1,22 @@
+<!-- app.component.html -->
+<header>
+    <h1>Welcome To My Website</h1>
+    <nav>
+      <ul class="nav-links">
+        
+        <li><a routerLink="/field" routerLinkActive="active-link">Field</a></li>
+        <li><a routerLink="/Student-name" routerLinkActive="active-link">Students</a></li>
+        <li><a routerLink="/extraactivity" routerLinkActive="active-link">Extra Activities</a></li>
+        <li><a routerLink="/course" routerLinkActive="active-link">Courses</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <router-outlet></router-outlet>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 My Angular Website</p>
+  </footer>
+  

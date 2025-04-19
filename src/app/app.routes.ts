@@ -8,6 +8,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { GradesComponent } from './components/grades/grades.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
 
+
 export const routes: Routes = [
 
     {

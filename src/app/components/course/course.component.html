@@ -1,1 +1,29 @@
 <p>course works!</p>
+<h1>Angular Structural Directives Demo</h1>
+
+<!-- *ngIf example -->
+<button (click)="toggleVisibility()">
+  {{ isVisible ? 'Hide' : 'Show' }} Message
+</button>
+<p *ngIf="isVisible">This message is conditionally shown using *ngIf!</p>
+
+<!-- *ngFor example -->
+<h3>Courses List:</h3>
+<ul>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+
+<!-- *ngSwitch example -->
+<h3>Select Level:</h3>
+<select [(ngModel)]="selectedLevel">
+  <option value="beginner">Beginner</option>
+  <option value="intermediate">Intermediate</option>
+  <option value="advanced">Advanced</option>
+</select>
+
+<div [ngSwitch]="selectedLevel">
+  <p *ngSwitchCase="'beginner'">You are at Beginner level.</p>
+  <p *ngSwitchCase="'intermediate'">Intermediate level selected.</p>
+  <p *ngSwitchCase="'advanced'">Advanced! You're doing great!</p>
+  <p *ngSwitchDefault>Select your level to see guidance.</p>
+</div>

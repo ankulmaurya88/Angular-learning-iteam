@@ -9,4 +9,10 @@ import { RouterLink } from '@angular/router';
 })
 export class GradesComponent {
 
+  
+  sayHello() {
+    alert('Hello!');
+    // or console.log('Hello!');
+  }
+
 }

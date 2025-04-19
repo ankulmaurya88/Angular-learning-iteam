@@ -12,10 +12,37 @@
     </nav>
   </header>
   
+  <body>
+     <!-- <h2>{{ username }}</h2> -->
+
+   
+
+  <div class="col-1">
+      <input [(ngModel)]="username1" placeholder="Enter name">
+          <p>Your name is: {{ username1}}</p>
+        </div>
+<div class="row">
+  <div class="col">
+    <input [(ngModel)]="name" placeholder="Type your name">
+  <button (click)="submit()">Submit</button>
+  <p>Hello, {{ name }}!</p>
+
+  </div>
+</div>
+
+<div class="col-2">
+  <button (click)="sayHello()">Click Me</button>
+  <section>
+    <input [value]="username1">
+  </section>
+</div>
+
+
+
   <main class="container">
     <router-outlet></router-outlet>
   </main>
-  
+</body>
   <footer>
     <p>&copy; 2025 My Angular Website</p>
   </footer>

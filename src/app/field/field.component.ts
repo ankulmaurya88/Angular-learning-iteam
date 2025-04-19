@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class FieldComponent {
 
+  work = "There I am doing Fieldwork";
+
+
 }

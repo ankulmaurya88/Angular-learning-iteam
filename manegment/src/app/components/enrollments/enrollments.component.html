@@ -1,0 +1,15 @@
+<div class="enrollments-container">
+    <h2>Enrollments</h2>
+    <button class="add-enrollment-btn">+ Add New Enrollment</button>
+  
+    <div class="enrollment-list">
+      <div class="enrollment-card" *ngFor="let enrollment of enrollments">
+        <p><strong>Student:</strong> {{ enrollment.student }}</p>
+        <p><strong>Course:</strong> {{ enrollment.course }}</p>
+        <p><strong>Date:</strong> {{ enrollment.date }}</p>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+  

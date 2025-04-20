@@ -1,0 +1,31 @@
+/* Make the page take full height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Root app container to handle flex layout */
+  :host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header and Footer default styles */
+  app-header,
+  app-footer {
+    width: 100%;
+  }
+  
+  /* Main content area should grow to fill space */
+  .container {
+    flex: 1;
+    padding: 20px;
+    background-color: #575252;
+  }
+  
+.route-link { display: flex; gap: 20px; justify-content: center; padding: 10px; } .route-link a { text-decoration: none; color: #333; font-weight: 500; }
+
+  /* .route-link { white-space: nowrap; } .route-link a { margin-right: 15px; text-decoration: none; color: #333; font-weight: 500; } */

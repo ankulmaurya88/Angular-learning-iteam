@@ -1,0 +1,16 @@
+<div class="teacher-container">
+    <h2>Teachers</h2>
+  
+    <button class="add-teacher-btn">+ Add New Teacher</button>
+  
+    <div class="teacher-list">
+      <div class="teacher-card" *ngFor="let teacher of teachers">
+        <h3>{{ teacher.name }}</h3>
+        <p>Subject: {{ teacher.subject }}</p>
+        <p>Email: {{ teacher.email }}</p>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+  

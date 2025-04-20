@@ -1,0 +1,28 @@
+<div class="students-container">
+    <h2>Students</h2>
+    <button class="add-student-btn">+ Add New Student</button>
+  
+    <!-- <div class="student-list">
+      <div class="student-card" *ngFor="let student of students">
+        <p><strong>Name:</strong> {{ student.name }}</p>
+        <p><strong>Roll No:</strong> {{ student.rollNo }}</p>
+        <p><strong>Email:</strong> {{ student.email }}</p>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      </div> -->
+
+  </div>
+
+  <h2>Student List</h2>
+
+  <div *ngFor="let student of students; let i = index" class="student-card">
+    <p><strong>#{{ i + 1 }}</strong></p>
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Roll No:</strong> {{ student.rollNo }}</p>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+  
+    <!-- 💡 Add a button to show extra data or trigger action -->
+    <button (click)="isshow(student)">Show Details</button>
+  </div>
+
+  

@@ -77,14 +77,14 @@
 
   <!-- FIRST NAME -->
   <label>First Name</label>
-  <input type="text" name="firstName" [(ngModel)]="student.firstName" required #firstNameCtrl="ngModel" />
+  <input type="text" name="firstName" [(ngModel)]="studentobj.firstName" required #firstNameCtrl="ngModel" />
   <div *ngIf="firstNameCtrl.invalid && firstNameCtrl.touched">
     <small *ngIf="firstNameCtrl.errors?.['required']">First name is required.</small>
   </div>
 
   <!-- EMAIL -->
   <label>Email</label>
-  <input type="email" name="email" [(ngModel)]="student.email" required email #emailCtrl="ngModel" />
+  <input type="email" name="email" [(ngModel)]="studentobj.email" required email #emailCtrl="ngModel" />
   <div *ngIf="emailCtrl.invalid && emailCtrl.touched">
     <small *ngIf="emailCtrl.errors?.['required']">Email is required.</small>
     <small *ngIf="emailCtrl.errors?.['email']">Invalid email format.</small>
@@ -94,14 +94,14 @@
 </form>
 
 
-<div>
-  <h1>thi is form value</h1>
-  <p>{{formvalue|json }}</p>
-</div>
-  <hr>  
+
+ <!-- form value -->
+
+  
   <hr>
 
 <footer>
+  <hr>
    
   <ul>
     
@@ -110,6 +110,14 @@
     </li>
     <button (click)="getAlluser()">find user</button>
   </ul>
+
+  <hr>
+  <h1>below waiting form responce</h1>
+<div>
+  <p>{{formvalue|json }}</p>
+</div>
+  
+  <hr>
     
     <p>&copy; 2025 My Angular Website</p>
   </footer>

@@ -1,1 +1,35 @@
-<p>product works!</p>
+<div class="container mt-4">
+
+    <h2 class="mb-4">Product List</h2>
+  
+    <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th>Product ID</th>
+          <th>Name</th>
+          <th>Category ID</th>
+          <th>Supplier ID</th>
+          <th>Price</th>
+          <th>Stock Quantity</th>
+          <th>Unit</th>
+          <th>Expiration Date</th>
+          <th>Reorder Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.product_id }}</td>
+          <td>{{ product.product_name }}</td>
+          <td>{{ product.category_id }}</td>
+          <td>{{ product.supplier_id }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.stock_quantity }}</td>
+          <td>{{ product.unit }}</td>
+          <td>{{ product.expiration_date | date }}</td>
+          <td>{{ product.reorder_level }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="product_load()">Product List</button>
+  </div>
+  

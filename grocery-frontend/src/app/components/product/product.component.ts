@@ -1,51 +1,31 @@
+
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from './services/api-service.service';  // Adjust path as needed
-import { Observable } from 'rxjs';
+ // Adjust path as needed
+ import { HttpClient, } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-product',
+  imports: [CommonModule],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
   products: any[] = [];
-  newProduct: any = {};
-
-  constructor(private apiService: ApiService) {}
-
+  constructor(private http: HttpClient) {}
   ngOnInit(): void {
-    this.loadProducts();
+    this.product_load();
   }
-
-  // Load existing products from the API
-  loadProducts(): void {
-    this.apiService.get('/groceryms/products/').subscribe({
+  product_load(): void {
+    this.http.get('http://127.0.0.1:8000/groceryms/products/').subscribe({
       next: (response: any) => {
         this.products = response;
       },
-      error: (err) => {
-        console.error(err);
+      error: () => {
         alert("Failed to fetch products.");
       }
     });
-  }
-
-  // Add a new product and refresh the list
-  addProduct(): void {
-    if (!this.newProduct || !this.newProduct.name) {
-      alert("Please enter product details.");
-      return;
-    }
-
-    this.apiService.post('/groceryms/products/', this.newProduct).subscribe({
-      next: (response: any) => {
-        this.products.push(response);
-        this.newProduct = {}; // Reset form
-      },
-      error: (err) => {
-        console.error(err);
-        alert("Failed to add product.");
-      }
-    });
-  }
+}
+  
 }

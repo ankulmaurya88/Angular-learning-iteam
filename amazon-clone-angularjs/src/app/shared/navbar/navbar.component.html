@@ -1,0 +1,44 @@
+<nav class="bg-white shadow-md p-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="assets/logo.png" alt="Logo" class="w-10 h-10" />
+      <span class="text-xl font-bold text-gray-800">ShopEasy</span>
+    </div>
+  
+    <!-- Search Bar -->
+    <div class="hidden md:flex flex-grow max-w-xl mx-4">
+      <input
+        type="text"
+        placeholder="Search for products..."
+        class="flex-grow p-2 border border-gray-300 rounded-l-md focus:outline-none"
+      />
+      <button class="bg-yellow-500 text-white px-4 rounded-r-md hover:bg-yellow-600">
+        Search
+      </button>
+    </div>
+  
+    <!-- User and Cart -->
+    <div class="flex items-center space-x-4">
+      <!-- User Account -->
+      <div class="text-sm text-gray-700 hover:text-black cursor-pointer">
+        <p class="font-medium">Hello, Guest</p>
+        <p class="font-bold">Sign In</p>
+      </div>
+  
+      <!-- Orders -->
+      <div class="text-sm text-gray-700 hover:text-black cursor-pointer">
+        <p class="font-medium">Returns</p>
+        <p class="font-bold">& Orders</p>
+      </div>
+  
+      <!-- Cart -->
+      <div class="relative cursor-pointer">
+        <img src="assets/icons/cart.svg" alt="Cart" class="w-6 h-6" />
+        <span
+          class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+          >{{ cartCount }}</span
+        >
+      </div>
+    </div>
+  </nav>
+  

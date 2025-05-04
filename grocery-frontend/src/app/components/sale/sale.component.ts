@@ -1,42 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServiceService } from './services/api-service.service';
+// use correct relative path
+import { CommonModule, JsonPipe } from '@angular/common';
   // Adjust path if needed
+  import { HttpClient, } from '@angular/common/http';
 
 @Component({
   selector: 'app-sale',
+  imports: [CommonModule],
   templateUrl: './sale.component.html',
   styleUrls: ['./sale.component.css'] // ✅ use `styleUrls` (plural)
 })
 export class SaleComponent implements OnInit {
-  sales: any[] = [];
-  newSale: any = {};
 
-  constructor(private apiService: ApiServiceService) {}
-
+  sale: any[] = [];
+  constructor(private http: HttpClient) {}
   ngOnInit(): void {
-    this.loadSales();
+    this.product_load();
   }
-
-  loadSales(): void {
-    this.apiService.get('/groceryms/sales/').subscribe({
+  product_load(): void {
+    this.http.get('http://127.0.0.1:8000/groceryms/sales/').subscribe({
       next: (response: any) => {
-        this.sales = response;
+        this.sale= response.data;
       },
       error: () => {
         alert("Failed to fetch sales.");
       }
     });
-  }
-
-  addSale(): void {
-    this.apiService.post('/groceryms/sales/', this.newSale).subscribe({
-      next: (response: any) => {
-        this.sales.push(response);
-        this.newSale = {};
-      },
-      error: () => {
-        alert("Failed to add sale.");
-      }
-    });
+  
+    
   }
 }
+

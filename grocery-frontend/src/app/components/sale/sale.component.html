@@ -1,1 +1,27 @@
-<p>sale works!</p>
+
+<div class="container">
+    <h1 class="my-4">Sales Details</h1>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Sale ID</th>
+          <th>Customer ID</th>
+          <th>Sale Date</th>
+          <th>Total Amount</th>
+          <th>Payment Method</th>
+        </tr>
+      </thead>
+      <hr>
+      <tbody>
+        <tr *ngFor="let sale of sale">
+          <td>{{ sale.sale_id }}</td>
+          <td>{{ sale.customer_id }}</td>
+          <td>{{ sale.sale_date | date:'yyyy-MM-dd' }}</td>
+          <td>{{ sale.total_amount | currency }}</td>
+          <td>{{ sale.payment_method }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
